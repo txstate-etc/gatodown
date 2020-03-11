@@ -16,7 +16,7 @@ async fn main() {
                 StatusCode::FOUND,
                 header::LOCATION,
                 "notify")));
-    let routes = warp::get().and(notify.or(favicon).or(files).or(redirect));
+    let routes = warp::get().and(notify.or(favicon).or(files).or(redirect)).with(warp::log("gatodown"));
 
     warp::serve(routes)
         .run(([0, 0, 0, 0], 8082))

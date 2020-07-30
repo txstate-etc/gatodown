@@ -288,6 +288,7 @@ dependencies = [
 name = "gatodown"
 version = "1.0.0"
 dependencies = [
+ "lazy_static",
  "log 0.4.8",
  "pretty_env_logger",
  "tokio",

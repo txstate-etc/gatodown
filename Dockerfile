@@ -1,4 +1,4 @@
-FROM rust:1.41.1 AS build
+FROM rust:1.45 AS build
 # Download the target for static linking.
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install musl-dev musl-tools \

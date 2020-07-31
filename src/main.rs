@@ -9,7 +9,7 @@ use warp::http::{StatusCode, header};
 // which edit instances use. The public instances use a /mj.../ path.
 lazy_static! {
     static ref BASE_URL_PATH: Option<String> = match env::var("BASE_URL_PATH") {
-        Ok(base_url_path) => Some(base_url_path.into()),
+        Ok(base_url_path) => { if base_url_path == "" { None } else { Some(base_url_path.into()) },
         Err(_) => None,
     };
 }
